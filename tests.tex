@@ -1,0 +1,48 @@
+% \documentclass{article}
+% \usepackage{tikz}
+% \usetikzlibrary{decorations.text,calc,arrows.meta}
+
+% \documentclass{standalone}
+% \usepackage{tikz}
+% \begin{document}
+% \begin{tikzpicture}
+% \def\angle{60}%
+% \pgfmathsetlengthmacro{\xoff}{2cm*cos(\angle)}%
+% \pgfmathsetlengthmacro{\yoff}{1cm*sin(\angle)}%
+% \draw (\xoff,\yoff) circle[x radius=8cm, y radius=4cm] ++(3*\xoff,3*\yoff) node{Non-Hermitian};
+
+% \draw circle[x radius=5cm, y radius=2.5cm] ++(1.5*\xoff,1.5*\yoff) node{Hermitian};
+% \end{tikzpicture}
+
+
+% \documentclass{beamer}
+% \usepackage{xmpmulti}
+
+% \begin{document}
+
+% \begin{frame}{Preparation}
+% \begin{itemize}
+% \item Make sure your images are named as \texttt{<filename>-<x>.<format>} where \texttt{x} is the sequence number.
+% \item By default, \texttt{x} starts from 0, but you can specify a custom starting number.
+% \item Example: \texttt{fig-0.png}, \texttt{fig-1.png}, \texttt{fig-2.png},\ldots
+% \item The following example uses 8 images named as \texttt{Draw-a-Cat-Face-Step-1.jpg}, \texttt{Draw-a-Cat-Face-Step-2.jpg}\ldots
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+% \multiinclude[format=jpg,start=1,graphics={width=\textwidth}]{Draw-a-Cat-Face-Step}
+% \end{frame}
+
+\documentclass{article}
+\usepackage[export]{adjustbox}
+
+\begin{document}
+
+\begin{figure}
+
+\adjustimage{width=.6\textwidth,center,caption={A particle travels from A to B in time t. Can we make this trip nearly instantaneous?},figure}{\adjustimage{left}{\multiinclude[format=png,start=1,graphics={width=0.5\textwidth}]{optim-gif/optimisation}}
+
+
+\end{figure}
+\end{document}
+
