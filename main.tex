@@ -7,7 +7,6 @@
 \usepackage{mathtools}
 \usepackage{braket}
 \usepackage[font=scriptsize,labelfont=bf]{caption}
-\usepackage[english]{babel}
 \usepackage{tikz}
 \usepackage{xmpmulti}
 \usepackage{soul}
@@ -16,13 +15,14 @@
 \definecolor{myNewColorA}{RGB}{0, 109, 174}
 \definecolor{myNewColorB}{RGB}{111, 100, 169}
 \definecolor{myNewColorC}{RGB}{0, 111, 41}
+\definecolor{myNewColorD}{RGB}{245, 123, 66}
 
 \setbeamercolor*{titlelike}{fg=myNewColorA}
 \setbeamercolor*{title}{bg=myNewColorA, fg = white}
 \setbeamercolor*{caption name}{fg=myNewColorA}
 
+
 % references
-\usepackage{natbib}
 \usepackage{hyperref}
 
 \newcommand*{\Scale}[2][4]{\scalebox{#1}{\ensuremath{#2}}}%
@@ -62,28 +62,25 @@
 \end{frame}
 
 %------------------------------------------------------------
+
 \section{Introduction}
-\begin{frame}{Hilbert space}
-\vspace{1cm}
-
+\begin{frame}{Hilbert spaces}
+\vspace{0.5cm}
 A Hilbert space is a vector space that can be infinite dimensional. \\
-\vspace{1cm}
+\vspace{0.5cm}
 Vector spaces are equipped with an inner product. \\
-\vspace{1cm}
-Inner product:\\
-    Defines a distance function. 
-
-%  \vspace{-2cm}
+\vspace{0.5cm}
+\textcolor{myNewColorD}{Inner product:\\
+    Define a distance function.}
+ \vspace{-1cm}
 \begin{figure}
-    \hspace{6.5em}
-    \includegraphics[width=0.7\textwidth]{hilbert.pdf}
+ \hspace{10em}
+    \includegraphics[width=0.6\textwidth]{hilbert.pdf}
     \\
     \tiny{Fig.3: Hilbert space stuff}
     \end{figure}
 \end{frame}
 
-% \begin{frame}{}
-% \end{frame}
 
 \begin{frame}{Hamiltonians as Observables}
     \centering{
@@ -92,7 +89,7 @@ Inner product:\\
     \draw (1,1) circle[x radius=0.8, y radius=0.8] ++(-0.05,-0.05) 
     node{\textcolor{myNewColorA}{Hermitian}};
     \pause
-    \draw (-1,0) rectangle(3,3) ++(-2,-0.5) node{\textcolor{myNewColorC}{CPT-symmetric}};
+    \draw (-1,0.5) rectangle(3,3) ++(-2,-0.5) node{\textcolor{myNewColorC}{CPT-symmetric}};
     \end{tikzpicture}}
     \\
     \hspace{1em}
@@ -109,12 +106,13 @@ Inner product:\\
     \end{enumerate}
 \end{frame}
 
+
 \begin{frame}{Hamiltonians as Observables}
     \centering{
     \begin{tikzpicture}
     \draw (-2,-1) rectangle(5,4) ++(-2,-0.5) node{\textcolor{myNewColorB}{Hamiltonians}};
     \draw (1,1) circle[x radius=0.8, y radius=0.8] ++(-0.05,-0.05) node{\textcolor{myNewColorA}{Hermitian}};
-    \draw (-1,1) rectangle(3,3) ++(-2,-0.5) node{\textcolor{myNewColorC}{CPT-symmetric}};
+    \draw (-1,0.5) rectangle(3,3) ++(-2,-0.5) node{\textcolor{myNewColorC}{CPT-symmetric}};
     \end{tikzpicture}}
     \\
     \hspace{1em}
@@ -131,21 +129,27 @@ Inner product:\\
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{CPT - symmetry}
-\vspace{-2cm}
-Hilbert space $\rightarrow \hat{H} = \hat{H}^{\mathcal{CPT}}$ \\
-\begin{align*}
-    & \mathcal{C} \rightarrow \mathrm{charge\:conjugation},\\
-    & \mathcal{P} \rightarrow \mathrm{spatial\:inversion},\\
-    & \mathcal{T} \rightarrow \mathrm{complex\:conjugation\:and\:time\:reversal}.
-\end{align*}
-\begin{align*}
-    \hat{H}^{\mathcal{CPT}} = &\:\mathcal{CPT}\:\hat{H}\:\mathcal{CPT},\\
-                            = & 
-\end{align*}
-inner product?
+
+\begin{frame}{CPT - symmetry in short}
+    \vspace{-1cm}
+    Hilbert space $\rightarrow \hat{H} = \hat{H}^{\mathcal{CPT}}$ \\
+    \vspace{-0.4cm}
+    \begin{align*}
+        & \mathcal{C} \rightarrow \mathrm{charge\:conjugation},\\
+        & \mathcal{P} \rightarrow \mathrm{spatial\:inversion},\\
+        & \mathcal{T} \rightarrow \mathrm{complex\:conjugation\:and\:time\:reversal}.
+    \end{align*}\\
+    \vspace{0.5cm}
+    Inner product: $(\vec{u}, \vec{v}) = \mathcal{CPT}(\vec{u})\cdot\vec{v}$,\\
+    \vspace{0.5cm}
+    If the eigenfunctions of a $\mathcal{PT}$-symmetric Hamiltonian are \textbf{not} also eigenfunctions of the $\mathcal{PT}$ operator we say the Hamiltonian possesess \textbf{broken $\mathcal{PT}$-symmetry}.\\
+    \pause
+    \vspace{0.5cm}
+    Interesting physical phenomena occurs in the broken symmetry region
 \end{frame}
 
+
+\section{Time evolution}
 \begin{frame}{Time evolution}
 \vspace{-1cm}
 \hspace{-2em}
@@ -177,13 +181,14 @@ inner product?
     where $t > 0$.
     \vspace{0.3cm}
     \pause
-    \item \textcolor{myNewColorB}{non-Hermitian} quantum mechanics: \textcolor{myNewColorB}{\large{?}}
+    \item \textcolor{myNewColorC}{CPT} quantum mechanics: \textcolor{myNewColorC}{\large{?}}
     \end{enumerate}
     \pause
     \vspace{0.7cm}
     \end{column}
     \end{columns}
 \end{frame}
+
 
 \section{Brachistochrone problem}
 \begin{frame}{The Quantum Brachistochrone problem}
@@ -203,10 +208,8 @@ inner product?
     
     \hspace{-15em}
     \begin{column}{0.5\textwidth}
-    % \begin{equation*}
-    % \mathrm{\beta\rho\alpha\chi\iota\sigma\tau\omicron\sigma\:\chi\rho\omicron\nu\omicron\sigma}
-    % \end{equation*}
-    \\
+
+        βράχιστος χρόνος\\
         brákhistos khrónos:\\
         ``shortest time"\\
     \vspace{1cm}
@@ -216,6 +219,7 @@ inner product?
     \end{column}
     \end{columns}
 \end{frame}
+
 
 \begin{frame}{The Quantum Brachistochrone problem}
 \vspace{0.5cm}
@@ -242,34 +246,53 @@ inner product?
         \pause
         % \item 
         % \pause
-        \item \large{uncertainty principle violation?}
+        \item \textcolor{myNewColorD}{Uncertainty principle violation?}
         \vspace{1cm}
     \end{enumerate}
     \end{column}
     \end{columns}
 \end{frame}
 
+
 \begin{frame}{The Maths}
 \begin{columns}
     \hspace{1.5em}
     \begin{column}{\textwidth}
-    \textcolor{myNewColorA}{Hermitian} case
+    \begin{equation*}
+    \vec{\psi_{i}}  = \begin{pmatrix}
+                        1 \\
+                        0 \\                
+    \end{pmatrix}, \quad
+    \vec{\psi_{f}}  = \begin{pmatrix}
+                        a \\
+                        b \\                
+    \end{pmatrix}, \quad |a|^2 + |b|^2 = 1,
+    \end{equation*} \\
+    \textcolor{myNewColorA}{Hermitian} case (not CPT-symmetric)
     \hspace{-1.5em}
     \begin{equation*}
     \hat{H}  = \begin{pmatrix}
                 s & r e^{-i\theta}  \\
                 r e^{i \theta} & u  \\
-                \end{pmatrix} , \quad \{r, s, \theta, u\} \in \mathbb{R}
+                \end{pmatrix} , \quad \{r, s, \theta, u\} \in \mathbb{R},
     \end{equation*}\\
+
+    \textcolor{myNewColorD}{Energy constraint}
+    \hspace{-1.5em}
+    \begin{equation*}
+        \textcolor{myNewColorD}{\omega^2 = (s-u)^2 + 4r^2},
+    \end{equation*}\\
+
     Time evolution
     \hspace{-1.5em}
     \begin{equation*}
-    \vec{\psi_f}  = \hat{U} \vec{\psi_i}
-    \end{equation*} \\
-    energy constraint
-    \hspace{-1.5em}
-    \begin{equation*}
-     \omega^2 = (s-u)^2 + 4r^2
+        \vec{\psi_{f}}  = \begin{pmatrix}
+            a \\
+            b \\                
+    \end{pmatrix} = e^{\frac{-i(s+u)t}{2\hbar}}\begin{pmatrix}
+            \cos(\frac{\omega t}{2\hbar}) - i \frac{s - u}{\omega} \sin(\frac{\omega t}{2\hbar})\\
+            - i \frac{2r}{\omega} e^{i \theta} \sin(\frac{\omega t}{2\hbar}) \\
+    \end{pmatrix}.
     \end{equation*} \\
     \end{column}
 \end{columns}
@@ -279,33 +302,61 @@ inner product?
 \begin{columns}
     \hspace{1.5em}
     \begin{column}{\textwidth}
+    \begin{equation*}
+    \vec{\psi_{i}}  = \begin{pmatrix}
+                        1 \\
+                        0 \\                
+    \end{pmatrix}, \quad
+    \vec{\psi_{f}}  = \begin{pmatrix}
+                    a \\
+                    b \\                
+    \end{pmatrix}, \quad |a|^2 + |b|^2 = 1,
+    \end{equation*} \\
     \textcolor{myNewColorC}{CPT-symmetric} case
     \hspace{-1.5em}
     \begin{equation*}
     \Tilde{H}  = \begin{pmatrix}
                 r e^{i\theta} & s  \\
                 s & r e^{-i\theta}  \\
-                \end{pmatrix}, \quad \{r, s, \theta\} \in \mathbb{R}
+                \end{pmatrix}, \quad \{r, s, \theta\} \in \mathbb{R},
     \end{equation*}\\
+
+    \textcolor{myNewColorD}{Energy constraint}
+    \hspace{-1.5em}
+    \begin{equation*}
+        \textcolor{myNewColorD}{\omega^2 = 4s^2 - 4r^2 \sin^2{\theta}} > 0, 
+    \end{equation*} \\
     Time evolution
-    \hspace{-1.5em}
-    \begin{equation*}
-    \vec{\psi_f}  = \hat{U} \vec{\psi_i}
-    \end{equation*} \\
-    energy constraint
-    \hspace{-1.5em}
-    \begin{equation*}
-     \omega^2 = 4s^2 - 4r^2 \sin^2{\theta}
-    \end{equation*} \\
+        \hspace{-1.5em}
+        \begin{equation*}
+            \vec{\psi_{f}}  = \begin{pmatrix}
+                a \\
+                b \\                
+        \end{pmatrix} = \frac{e^{\frac{-itr \cos\theta}{\hbar}}}{\cos{\alpha}}
+        \begin{pmatrix}
+                \cos(\frac{\omega t}{2 \hbar} - \alpha)\\
+                - i \frac{2r}{\omega} e^{i \theta} \sin(\frac{\omega t}{2\hbar}) \\
+        \end{pmatrix}.
+        \end{equation*}\\
+        \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Rabi frequency}
+\begin{columns}
+    \hspace{1.5em}
+    \begin{column}{\textwidth}
     \end{column}
 \end{columns}
 \end{frame}
 
-% \begin{frame}{}
-% \end{frame}
-
-% \begin{frame}{}
-% \end{frame}
+\begin{frame}{The geometry of the Hilbert space}
+\begin{columns}
+    \hspace{1.5em}
+    \begin{column}{\textwidth}
+    \end{column}
+\end{columns}
+\end{frame}
 
 \section{Conclusion}
 \begin{frame}{Conclusion}
@@ -318,8 +369,36 @@ inner product?
 \end{frame}
 
 \section{Appendix}
-\begin{frame}{Appendix}
+\begin{frame}{Broken and unbroken CPT-symmetry}
 \end{frame}
+
+\begin{frame}{Quantum systems with gain and loss}
+\end{frame}
+
+\begin{frame}{Constructing the C operator}
+% \begin{columns}
+%     \hspace{1.5em}
+%     \begin{column}{\textwidth}
+%     \end{column}
+% \end{columns}
+\end{frame}
+
+\begin{frame}{The maths in-depth}
+% \begin{columns}
+%     \hspace{1.5em}
+%     \begin{column}{\textwidth}
+%     \begin{equation*}
+%         \hat{H}  = r \cos(\theta) \hat{\mathbb{I}} +  
+%         \frac{1}{2} \omega \hat{\sigma} \cdot \hat{n},
+%     \end{equation*}
+%     \begin{equation*}
+%         \hat{\sigma} \cdot \hat{n},
+%     \end{equation*}
+
+%     \end{column}
+% \end{columns}
+\end{frame}
+
 
 \end{document}
 

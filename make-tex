@@ -9,7 +9,7 @@ TEXFILE=main
 rm -f *.aux *.log *.aux *.nav *.fls *.out *.snm *.toc *.bbl *.blg
 
 pdflatex ${TEXFILE}
-# bibtex ${TEXFILE}
+bibtex ${TEXFILE}
 pdflatex ${TEXFILE}
 pdflatex ${TEXFILE}
 

@@ -1,37 +1,3 @@
-
-Skip to content
-
-    Product 
-
-Team
-Enterprise
-Explore
-Marketplace
-Pricing
-
-Sign in
-Sign up
-chrisjbillington /
-thesis
-Public
-
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-
-    Insights
-
-thesis/unsrturl_mod.bst
-@chrisjbillington
-chrisjbillington Editing software
-Latest commit 63d15bb on May 30, 2018
-History
-1 contributor
-1412 lines (1277 sloc) 31 KB
 %%% Modification of http://www.tex.ac.uk/tex-archive/bibliography/bibtex/contrib/urlbst/unsrturl.bst
 %%% Changes include:
 %%%   * URL field is ignored
@@ -1444,19 +1410,3 @@ FUNCTION {end.bib}
 }
 
 EXECUTE {end.bib}
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
