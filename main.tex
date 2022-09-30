@@ -3,6 +3,7 @@
 \usepackage[english]{babel}
 \usepackage{alphabeta}
 \usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{latexsym}
 \usepackage[all,cmtip]{xy}
 \usepackage{mathtools}
 \usepackage{braket}
@@ -140,7 +141,7 @@ Vector spaces are equipped with an inner product. \\
         & \mathcal{T} \rightarrow \mathrm{complex\:conjugation\:and\:time\:reversal}.
     \end{align*}\\
     \vspace{0.5cm}
-    Inner product: $(\vec{u}, \vec{v}) = \mathcal{CPT}(\vec{u})\cdot\vec{v}$,\\
+    Inner product is determined dynamically in terms of the Hamiltonian.\\
     \vspace{0.5cm}
     If the eigenfunctions of a $\mathcal{PT}$-symmetric Hamiltonian are \textbf{not} also eigenfunctions of the $\mathcal{PT}$ operator we say the Hamiltonian possesess \textbf{broken $\mathcal{PT}$-symmetry}.\\
     \pause
@@ -191,7 +192,7 @@ Vector spaces are equipped with an inner product. \\
 
 
 \section{Brachistochrone problem}
-\begin{frame}{The Quantum Brachistochrone problem}
+\begin{frame}{The Classical Brachistochrone problem}
 \vspace{0.5cm}
 \begin{columns}
     \hspace{1.5em}
@@ -208,7 +209,6 @@ Vector spaces are equipped with an inner product. \\
     
     \hspace{-15em}
     \begin{column}{0.5\textwidth}
-
         βράχιστος χρόνος\\
         brákhistos khrónos:\\
         ``shortest time"\\
@@ -221,44 +221,44 @@ Vector spaces are equipped with an inner product. \\
 \end{frame}
 
 
-\begin{frame}{The Quantum Brachistochrone problem}
-\vspace{0.5cm}
+\begin{frame}{Two-dimensional Quantum Brachistochrone problem}
 \begin{columns}
     \hspace{1.5em}
     \begin{column}{\textwidth}
-    \includegraphics[width=0.5\textwidth]{optim-gif/optimisation-6}
-    \\
-    \hspace{1em}
-    \tiny{Fig.2:
-    A particle travels from left to right in time t,\\
-    \hspace{2.4em}
-    Can we make this trip nearly instantaneous?}
+    \includegraphics[width=0.35\textwidth]{bloch.png}\\
+    \tiny{Fig.3: Bloch sphere with initial and final states}
     \end{column}
-
-    \hspace{-15em}
-    \begin{column}{0.5\textwidth}
-    \begin{enumerate}
-        \item We want the shortest time step possible
-        \pause
-        % \item 
-        % \pause
-        \item \textcolor{myNewColorC}{Complex non-Hermitian Hamiltonians:\\ \quad time-optimal evolution}
-        \pause
-        % \item 
-        % \pause
-        \item \textcolor{myNewColorD}{Uncertainty principle violation?}
-        \vspace{1cm}
-    \end{enumerate}
+    \begin{column}{0.8\textwidth}
+    \hspace{-20em}
+    This space is spanned by $\vec{\psi_i}$ and $\vec{\psi_f}.$\\
+    \vspace{0.4cm}
+    \hspace{-20em}
+    \pause
+    We want the \textbf{fastest} time evolution possible,\\
+    \hspace{-20em}
+    without violating the time-energy uncertainty principle.\\
+    \vspace{0.4cm}
+    \pause
+    \hspace{-20em}
+    Then our Hamiltonian must satisfy:\\
+    \hspace{-20em}
+    \textcolor{myNewColorD}{Energy constraint:}\\
+    \hspace{-20em}
+    \textcolor{myNewColorD}{$\quad\omega  = E_{\mathrm{max}} - E_{\mathrm{min}}$}\\
+    \vspace{0.7cm}
+    \pause
+    \hspace{-18em}
+    \textcolor{myNewColorC}{Will a complex non-Hermitian Hamiltonian}\\
+    \hspace{-18em}
+    \textcolor{myNewColorC}{give time-optimal evolution?}
     \end{column}
     \end{columns}
 \end{frame}
 
 
 \begin{frame}{The Maths}
-\begin{columns}
-    \hspace{1.5em}
-    \begin{column}{\textwidth}
-    \begin{equation*}
+\vspace{-1cm}
+\begin{equation*}
     \vec{\psi_{i}}  = \begin{pmatrix}
                         1 \\
                         0 \\                
@@ -266,17 +266,25 @@ Vector spaces are equipped with an inner product. \\
     \vec{\psi_{f}}  = \begin{pmatrix}
                         a \\
                         b \\                
-    \end{pmatrix}, \quad |a|^2 + |b|^2 = 1,
-    \end{equation*} \\
-    \textcolor{myNewColorA}{Hermitian} case (not CPT-symmetric)
-    \hspace{-1.5em}
+    \end{pmatrix}
+    = \begin{pmatrix}
+                        0 \\
+                        1 \\                
+    \end{pmatrix}
+    \vspace{0.5cm}
+    \end{equation*}. \\
+
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+    \textcolor{myNewColorA}{Hermitian} case
+    \hspace{-3em}
+    \begin{scriptsize}
     \begin{equation*}
     \hat{H}  = \begin{pmatrix}
                 s & r e^{-i\theta}  \\
                 r e^{i \theta} & u  \\
-                \end{pmatrix} , \quad \{r, s, \theta, u\} \in \mathbb{R},
+                \end{pmatrix} , \{r, s, \theta, u\} \in \mathbb{R},
     \end{equation*}\\
-
     \textcolor{myNewColorD}{Energy constraint}
     \hspace{-1.5em}
     \begin{equation*}
@@ -286,77 +294,164 @@ Vector spaces are equipped with an inner product. \\
     Time evolution
     \hspace{-1.5em}
     \begin{equation*}
-        \vec{\psi_{f}}  = \begin{pmatrix}
+        \begin{pmatrix}
             a \\
             b \\                
-    \end{pmatrix} = e^{\frac{-i(s+u)t}{2\hbar}}\begin{pmatrix}
+            \end{pmatrix} = e^{\frac{-i(s+u)t}{2\hbar}}\begin{pmatrix}
             \cos(\frac{\omega t}{2\hbar}) - i \frac{s - u}{\omega} \sin(\frac{\omega t}{2\hbar})\\
             - i \frac{2r}{\omega} e^{i \theta} \sin(\frac{\omega t}{2\hbar}) \\
-    \end{pmatrix}.
-    \end{equation*} \\
+            \end{pmatrix}.
+    \end{equation*}\\
+    \end{scriptsize}
     \end{column}
-\end{columns}
-\end{frame}
 
-\begin{frame}{The Maths}
-\begin{columns}
-    \hspace{1.5em}
-    \begin{column}{\textwidth}
-    \begin{equation*}
-    \vec{\psi_{i}}  = \begin{pmatrix}
-                        1 \\
-                        0 \\                
-    \end{pmatrix}, \quad
-    \vec{\psi_{f}}  = \begin{pmatrix}
-                    a \\
-                    b \\                
-    \end{pmatrix}, \quad |a|^2 + |b|^2 = 1,
-    \end{equation*} \\
+    \begin{column}{0.5\textwidth}
     \textcolor{myNewColorC}{CPT-symmetric} case
-    \hspace{-1.5em}
+    \begin{scriptsize}
     \begin{equation*}
     \Tilde{H}  = \begin{pmatrix}
                 r e^{i\theta} & s  \\
                 s & r e^{-i\theta}  \\
                 \end{pmatrix}, \quad \{r, s, \theta\} \in \mathbb{R},
     \end{equation*}\\
-
     \textcolor{myNewColorD}{Energy constraint}
     \hspace{-1.5em}
-    \begin{equation*}
-        \textcolor{myNewColorD}{\omega^2 = 4s^2 - 4r^2 \sin^2{\theta}} > 0, 
-    \end{equation*} \\
+   \begin{equation*}
+        \textcolor{myNewColorD}{\omega^2 = 4s^2 - 4r^2 \sin^2{\theta}} > 0,
+    \end{equation*}\\
     Time evolution
-        \hspace{-1.5em}
-        \begin{equation*}
-            \vec{\psi_{f}}  = \begin{pmatrix}
+    \hspace{-1.5em}
+    \begin{equation*}
+        \begin{pmatrix}
                 a \\
                 b \\                
         \end{pmatrix} = \frac{e^{\frac{-itr \cos\theta}{\hbar}}}{\cos{\alpha}}
         \begin{pmatrix}
                 \cos(\frac{\omega t}{2 \hbar} - \alpha)\\
-                - i \frac{2r}{\omega} e^{i \theta} \sin(\frac{\omega t}{2\hbar}) \\
+                - i \sin(\frac{\omega t}{2\hbar})\\
         \end{pmatrix}.
-        \end{equation*}\\
-        \end{column}
-\end{columns}
-\end{frame}
+    \end{equation*}\\
+    \hspace{-1.5em}
+    where $\sin(\alpha) = \frac{r}{s}\sin(\theta)$.
 
-\begin{frame}{Rabi frequency}
-\begin{columns}
-    \hspace{1.5em}
-    \begin{column}{\textwidth}
-    The frequency of fluctuations in the populations of two atomic energy levels.\\
-    \vspace{0.5cm}
-    It is proportional to the strength of the \textbf{coupling} between the light's and the atomic transition's frequencies. 
+    \end{scriptsize}
     \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}{The geometry of the Hilbert space}
+
+\begin{frame}{The Maths}
+\begin{scriptsize}
+\begin{equation*}
+    \vec{\psi_{i}}  = \begin{pmatrix}
+                        1 \\
+                        0 \\                
+    \end{pmatrix}, \quad
+    \vec{\psi_{f}}  = \begin{pmatrix}
+                        a \\
+                        b \\                
+    \end{pmatrix}
+    = \begin{pmatrix}
+                        0 \\
+                        1 \\                
+    \end{pmatrix}
+    \end{equation*}\\
+    \end{scriptsize}
+    \vspace{0.3cm}
+
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+    \textcolor{myNewColorA}{Hermitian} time evolution\\
+
+    \begin{scriptsize}
+    \begin{equation*}
+        \begin{pmatrix}
+            a \\
+            b \\                
+            \end{pmatrix} = e^{\frac{-i(s+u)t}{2\hbar}}\begin{pmatrix}
+            \cos(\frac{\omega t}{2\hbar}) - i \frac{s - u}{\omega} \sin(\frac{\omega t}{2\hbar})\\
+            - i \frac{2r}{\omega} e^{i \theta} \sin(\frac{\omega t}{2\hbar}) \\
+            \end{pmatrix}.
+    \end{equation*}
+    \pause
+    \begin{equation*}
+    \Rightarrow |b|= \frac{2r}{\omega} \sin\left(\frac{\omega t}{2\hbar}\right),
+    \end{equation*}
+    \pause
+    \begin{equation*}
+    \Rightarrow t = \frac{2\hbar}{\omega} \arcsin\left(\frac{\omega |b|}{2r}\right),
+    \end{equation*}
+    \pause
+    For all $r>0$ subject to \textcolor{myNewColorD}{$\omega^2 = (s-u)^2 + 4r^2$}\\
+    for a fixed $\omega$.
+    \begin{equation*}
+    \therefore \tau = \frac{2\hbar}{\omega} \arcsin\left(|b|\right) = \frac{\pi \hbar}{\omega}
+    \end{equation*}\\
+    is the minimum \textit{passage time}.
+    \end{scriptsize}
+    \end{column}
+
+    \pause
+    \begin{column}{0.5\textwidth}
+    \vspace{2cm}
+    \textcolor{myNewColorC}{CPT} time evolution\\
+    \vspace{-1cm}
+    \begin{scriptsize}
+    \begin{equation*}
+        \begin{pmatrix}
+                a \\
+                b \\                
+        \end{pmatrix} = \frac{e^{\frac{-itr \cos\theta}{\hbar}}}{\cos{\alpha}}
+        \begin{pmatrix}
+                \cos(\frac{\omega t}{2 \hbar} - \alpha)\\
+                - i \sin(\frac{\omega t}{2\hbar})\\
+        \end{pmatrix}.
+    \end{equation*}\\
+    \pause
+    \begin{equation*}
+    \Rightarrow |a|= \frac{\cos{\frac{\omega t}{2 \hbar} -\alpha}}{\cos{\alpha}} \sin\left(\frac{\omega t}{2\hbar}\right),
+    \end{equation*}
+    \pause
+    \begin{equation*}
+    \Rightarrow t = \frac{\hbar}{\omega}(2 \alpha + \pi) ,
+    \end{equation*}
+    \pause
+    Since $\omega$ is fixed,
+    \textcolor{myNewColorD}{$\omega^2 = 4s^2 - 4r^2 \sin^{2}(\theta)$}\\
+    $\quad\quad\quad\quad\:\:\:\quad \to \omega^2 = 4s^2\cos^2(\alpha)$\\
+    % we require $s, r >> 1$  to minimise $t$.
+    \pause
+    \vspace{0.5cm}
+    Then $t \to 0$ when $\alpha \to -\frac{\pi}{2}$.\\
+    \end{scriptsize}
+    \end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{The geometry of the space}
 \begin{columns}
     \hspace{1.5em}
     \begin{column}{\textwidth}
+    $\mathcal{CPT}$ inner products are defined depending on the Hamiltonian used.\\
+    \pause
+    \vspace{0.5cm}
+    \begin{equation*}
+        \vec{\psi_i} = \begin{pmatrix}
+                1 \\
+                0 \\                
+        \end{pmatrix}, \quad
+        \vec{\psi_f} = \begin{pmatrix}
+                0 \\
+                1 \\                
+        \end{pmatrix}
+        \end{equation*}
+    \begin{enumerate}
+        \item orthogonal $\to$ \textcolor{myNewColorA}{Hermitian} inner product
+        \pause
+        \item not orthogonal $\to$ \textcolor{myNewColorC}{CPT}  inner  product\\
+        % angle: $\delta = \pi - 2|\alpha|$
+        \end{enumerate}
     \end{column}
 \end{columns}
 \end{frame}
@@ -372,6 +467,17 @@ Vector spaces are equipped with an inner product. \\
 \end{frame}
 
 \section{Appendix}
+\begin{frame}{Rabi frequency}
+\begin{columns}
+    \hspace{1.5em}
+    \begin{column}{\textwidth}
+    The frequency of fluctuations in the populations of two atomic energy levels.\\
+    \vspace{0.5cm}
+    It is proportional to the strength of the \textbf{coupling} between the light's and the atomic transition's frequencies. 
+    \end{column}
+\end{columns}
+\end{frame}
+
 \begin{frame}{Broken and unbroken CPT-symmetry}
 \end{frame}
 
