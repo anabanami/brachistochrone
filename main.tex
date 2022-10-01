@@ -142,6 +142,7 @@ Vector spaces are equipped with an inner product. \\
     \end{align*}\\
     \vspace{0.5cm}
     Inner product is determined dynamically in terms of the Hamiltonian.\\
+    \pause
     \vspace{0.5cm}
     If the eigenfunctions of a $\mathcal{PT}$-symmetric Hamiltonian are \textbf{not} also eigenfunctions of the $\mathcal{PT}$ operator we say the Hamiltonian possesess \textbf{broken $\mathcal{PT}$-symmetry}.\\
     \pause
@@ -184,8 +185,6 @@ Vector spaces are equipped with an inner product. \\
     \pause
     \item \textcolor{myNewColorC}{CPT} quantum mechanics: \textcolor{myNewColorC}{\large{?}}
     \end{enumerate}
-    \pause
-    \vspace{0.7cm}
     \end{column}
     \end{columns}
 \end{frame}
@@ -197,7 +196,7 @@ Vector spaces are equipped with an inner product. \\
 \begin{columns}
     \hspace{1.5em}
     \begin{column}{\textwidth}
-    \multiinclude[format=png,start=1,graphics={width=0.5\textwidth}]
+    \multiinclude[format=pdf,start=1,graphics={width=0.5\textwidth}]
     {optim-gif/optimisation}
     \\
     \hspace{1em}
@@ -214,14 +213,14 @@ Vector spaces are equipped with an inner product. \\
         ``shortest time"\\
     \vspace{1cm}
     \pause
-    \small{\textcolor{myNewColorC}{How fast can we evolve?}
+    \small{\textcolor{myNewColorC}{How fast can we evolve a state?}
     }
     \end{column}
     \end{columns}
 \end{frame}
 
 
-\begin{frame}{Two-dimensional Quantum Brachistochrone problem}
+\begin{frame}{A simple quantum brachistochrone problem}
 \begin{columns}
     \hspace{1.5em}
     \begin{column}{\textwidth}
@@ -240,7 +239,7 @@ Vector spaces are equipped with an inner product. \\
     \vspace{0.4cm}
     \pause
     \hspace{-20em}
-    Then our Hamiltonian must satisfy:\\
+    The chosen Hamiltonian must satisfy:\\
     \hspace{-20em}
     \textcolor{myNewColorD}{Energy constraint:}\\
     \hspace{-20em}
@@ -419,7 +418,7 @@ Vector spaces are equipped with an inner product. \\
     Since $\omega$ is fixed,
     \textcolor{myNewColorD}{$\omega^2 = 4s^2 - 4r^2 \sin^{2}(\theta)$}\\
     $\quad\quad\quad\quad\:\:\:\quad \to \omega^2 = 4s^2\cos^2(\alpha)$\\
-    % we require $s, r >> 1$  to minimise $t$.
+    we require $s, r >> 1$.\\
     \pause
     \vspace{0.5cm}
     Then $t \to 0$ when $\alpha \to -\frac{\pi}{2}$.\\
@@ -450,7 +449,11 @@ Vector spaces are equipped with an inner product. \\
         \item orthogonal $\to$ \textcolor{myNewColorA}{Hermitian} inner product
         \pause
         \item not orthogonal $\to$ \textcolor{myNewColorC}{CPT}  inner  product\\
-        % angle: $\delta = \pi - 2|\alpha|$
+        \pause
+        vector separation: $\delta = \pi - 2|\alpha|$\\
+        \pause 
+        \vspace{0.5cm}
+        We can choose $\alpha$ to create a ``wormhole" effect in Hilbert space.
         \end{enumerate}
     \end{column}
 \end{columns}
@@ -458,6 +461,11 @@ Vector spaces are equipped with an inner product. \\
 
 \section{Conclusion}
 \begin{frame}{Conclusion}
+\begin{enumerate}
+    \item This paper demonstrates the theoretical differences in both $\mathcal{PT}$-symmetric and conventional Hermitian quantum mechanics.\\
+    \item The ``wormhole" effect could be of importance in design and implementation of fast quantum computation and comunication algorithms.\\
+    \item There could be quantum protection mechanisms limiting the applicability of Hilbert-space ``wormholes".
+\end{enumerate}
 \end{frame}
 
 \begin{frame}{References} 
@@ -466,70 +474,56 @@ Vector spaces are equipped with an inner product. \\
     \bibliography{mybib.bib}
 \end{frame}
 
-\section{Appendix}
-\begin{frame}{Rabi frequency}
-\begin{columns}
-    \hspace{1.5em}
-    \begin{column}{\textwidth}
-    The frequency of fluctuations in the populations of two atomic energy levels.\\
-    \vspace{0.5cm}
-    It is proportional to the strength of the \textbf{coupling} between the light's and the atomic transition's frequencies. 
-    \end{column}
-\end{columns}
-\end{frame}
+% \section{Appendix}
+% \begin{frame}{Broken and unbroken CPT-symmetry}
+% \end{frame}
 
-\begin{frame}{Broken and unbroken CPT-symmetry}
-\end{frame}
+% \begin{frame}{Constructing the C operator}
+% \begin{equation*}
+% \mathcal{C}^2 = 1,\quad [\mathcal{C}, \hat{H}] = 0,\quad [\mathcal{C},\mathcal{PT}] = 0.
+% \end{equation*}
 
-\begin{frame}{Quantum systems with gain and loss}
-\end{frame}
+% \end{frame}
 
-\begin{frame}{Constructing the C operator}
+% \begin{frame}{Equivalent Hermitian and PT symmetic Hamiltonians}
+% For any Hamiltonian with unbroken $\mathcal{PT}$-symmetry there exists an equivalent Hermitian Hamiltonian.
+% \begin{enumerate}
+%     \item
+% \end{enumerate}
+% \end{frame}
+
+% \begin{frame}{More CPT quantum theory}
 % \begin{columns}
 %     \hspace{1.5em}
 %     \begin{column}{\textwidth}
+%     \begin{enumerate}
+%     \item \begin{large}Balanced open systems\\
+%     \end{large}
+%         \vspace{0.1cm}
+%         \begin{small}
+%         Imaginary potential contributions $\rightarrow$ source and drain terms.
+%         \end{small}
+
+%     \item \begin{large}Possible experimental ideas\\
+%     \end{large}
+%     \vspace{0.1cm}
+%     \begin{small}Embedding the non-Hermitian CPT symmetric system into a larger structure described by a Hermitian Hamiltonian.
+%     \end{small}
+%     \end{enumerate}
 %     \end{column}
 % \end{columns}
-\end{frame}
+% \end{frame}
 
-\begin{frame}{The maths in-depth}
+% \begin{frame}{Rabi frequency}
 % \begin{columns}
 %     \hspace{1.5em}
 %     \begin{column}{\textwidth}
-%     \begin{equation*}
-%         \hat{H}  = r \cos(\theta) \hat{\mathbb{I}} +  
-%         \frac{1}{2} \omega \hat{\sigma} \cdot \hat{n},
-%     \end{equation*}
-%     \begin{equation*}
-%         \hat{\sigma} \cdot \hat{n},
-%     \end{equation*}
-
+%     The frequency of fluctuations in the populations of two atomic energy levels.\\
+%     \vspace{0.5cm}
+%     It is proportional to the strength of the \textbf{coupling} between the light's and the atomic transition's frequencies. 
 %     \end{column}
 % \end{columns}
-\end{frame}
-
-
-\begin{frame}{More CPT quantum theory}
-\begin{columns}
-    \hspace{1.5em}
-    \begin{column}{\textwidth}
-    \begin{enumerate}
-    \item \begin{large}Balanced open systems\\
-    \end{large}
-        \vspace{0.1cm}
-        \begin{small}
-        Imaginary potential contributions $\rightarrow$ source and drain terms.
-        \end{small}
-
-    \item \begin{large}Possible experimental ideas\\
-    \end{large}
-    \vspace{0.1cm}
-    \begin{small}Embedding the non-Hermitian CPT symmetric system into a larger structure described by a Hermitian Hamiltonian.
-    \end{small}
-    \end{enumerate}
-    \end{column}
-\end{columns}
-\end{frame}
+% \end{frame}
 
 \end{document}
 
