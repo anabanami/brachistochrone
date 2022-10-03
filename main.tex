@@ -63,14 +63,6 @@
 \end{frame}
 
 %------------------------------------------------------------
-% \begin{frame}{}
-% \begin{figure}
-%     \hspace{-4.8em}
-%     \includegraphics[width=1.1\textwidth]{paper.png}
-%     \\
-%     \tiny{}
-%     \end{figure}
-% \end{frame}
 
 \section{Introduction}
 \begin{frame}{Hilbert spaces}
@@ -98,17 +90,16 @@ Vector spaces are equipped with an inner product. \\
     \draw (1,1) circle[x radius=0.8, y radius=0.8] ++(-0.05,-0.05) 
     node{\textcolor{myNewColorA}{Hermitian}};
     \pause
-    \draw (-1,0.5) rectangle(3,3) ++(-2,-0.5) node{\textcolor{myNewColorC}{CPT-symmetric}};
+    \draw (-1,0.5) rectangle(3,3) ++(-2,-0.5) node{\textcolor{myNewColorC}{PT-symmetric}};
     \end{tikzpicture}}
     \\
     \hspace{1em}
     \begin{tiny}
-        Fig.1: The set of all possible Hamiltonians.
+        Fig.2: The set of all possible Hamiltonians.
     \end{tiny}
     \\
     \begin{enumerate}
         \item \textcolor{myNewColorA}{Observables are \textbf{self-adjoint} operators.}
-        \item \textcolor{myNewColorC}{A state $\psi$ of the quantum system is a unit vector of $\hat{H}$.}
         \item \textcolor{myNewColorC}{$\hat{H}$ has a real energy spectrum with defined lowest energy.}
         \item \textcolor{myNewColorC}{Unitarity.}
     \end{enumerate}
@@ -120,41 +111,39 @@ Vector spaces are equipped with an inner product. \\
     \begin{tikzpicture}
     \draw (-2,-1) rectangle(5,4) ++(-2,-0.5) node{\textcolor{myNewColorB}{Hamiltonians}};
     \draw (1,1) circle[x radius=0.8, y radius=0.8] ++(-0.05,-0.05) node{\textcolor{myNewColorA}{Hermitian}};
-    \draw (-1,0.5) rectangle(3,3) ++(-2,-0.5) node{\textcolor{myNewColorC}{CPT-symmetric}};
+    \draw (-1,0.5) rectangle(3,3) ++(-2,-0.5) node{\textcolor{myNewColorC}{PT-symmetric}};
     \end{tikzpicture}}
     \\
     \hspace{1em}
     \begin{tiny}
-        Fig.1: The set of all possible Hamiltonians.
+        Fig.2: The set of all possible Hamiltonians.
     \end{tiny}
     \\
     \begin{enumerate}
         \item \textcolor{myNewColorA}{\st{Observables are \textbf{self-adjoint} operators.}}
-        \item \textcolor{myNewColorC}{A state $\psi$ of the quantum system is a unit vector of $\hat{H}$.}
         \item \textcolor{myNewColorC}{$\hat{H}$ has a real energy spectrum with defined lowest energy.}
         \item \textcolor{myNewColorC}{Unitarity.}
     \end{enumerate}
 \end{frame}
 
 
-\begin{frame}{CPT - symmetry in short}
+\begin{frame}{PT - symmetry in short}
     \vspace{-1cm}
     \begin{align*}
-        & \mathcal{C} \rightarrow \mathrm{charge\:conjugation},\\
         & \mathcal{P} \rightarrow \mathrm{spatial\:inversion},\\
-        & \mathcal{T} \rightarrow \mathrm{complex\:conjugation\:and\:time\:reversal}.
+        & \mathcal{T} \rightarrow \mathrm{time\:reversal (complex conjugation)}.
     \end{align*}\\
-    \vspace{-0.4cm}
-    Hilbert space $\rightarrow \hat{H} = \hat{H}^{\mathcal{CPT}}$ \\
+    \vspace{0.5cm}
+    Hilbert space $\rightarrow \hat{H} = \hat{H}^{\mathcal{PT}}$ \\
     \vspace{0.5cm}
     \pause
-    Inner product is determined dynamically in terms of the Hamiltonian.\\
+    The $\mathcal{PT}$ inner product is determined dynamically in terms of the Hamiltonian.\\
     \pause
     \vspace{0.5cm}
     If the eigenfunctions of a $\mathcal{PT}$-symmetric Hamiltonian are \textbf{not} also eigenfunctions of the $\mathcal{PT}$ operator we say the Hamiltonian possesess \textbf{broken $\mathcal{PT}$-symmetry}.\\
     \pause
     \vspace{0.5cm}
-    Interesting physical phenomena occurs in the broken symmetry region
+    Interesting physical phenomena occurs in the broken symmetry region.
 \end{frame}
 
 
@@ -187,10 +176,9 @@ Vector spaces are equipped with an inner product. \\
     \hspace{5em}
     $\hat{U} = e^{-i\hat{H}t / \hbar}$,\\
     \hspace{5em}
-    where $t > 0$.
     \vspace{0.3cm}
     \pause
-    \item \textcolor{myNewColorC}{CPT} quantum mechanics: \textcolor{myNewColorC}{\large{?}}
+    \item \textcolor{myNewColorC}{PT} quantum mechanics: \textcolor{myNewColorC}{\large{?}}
     \end{enumerate}
     \end{column}
     \end{columns}
@@ -207,7 +195,7 @@ Vector spaces are equipped with an inner product. \\
     {optim-gif/optimisation}
     \\
     \hspace{1em}
-    \tiny{Fig.2:
+    \tiny{Fig.3:
     A particle travels from left to right in time t,\\
     \hspace{2.4em}
     Can we make this trip nearly instantaneous?}
@@ -219,7 +207,6 @@ Vector spaces are equipped with an inner product. \\
         brákhistos khrónos:\\
         ``shortest time"\\
     \vspace{1cm}
-    \pause
     \small{\textcolor{myNewColorC}{How fast can we evolve a state?}
     }
     \end{column}
@@ -232,7 +219,7 @@ Vector spaces are equipped with an inner product. \\
     \hspace{1.5em}
     \begin{column}{\textwidth}
     \includegraphics[width=0.35\textwidth]{bloch.png}\\
-    \tiny{Fig.3: Bloch sphere with initial and final states}
+    \tiny{Fig.4: Bloch sphere with initial and final states}
     \end{column}
     \begin{column}{0.8\textwidth}
     \hspace{-20em}
@@ -246,11 +233,9 @@ Vector spaces are equipped with an inner product. \\
     \vspace{0.4cm}
     \pause
     \hspace{-20em}
-    The chosen Hamiltonian must satisfy:\\
+    The Hamiltonian must satisfy the \textcolor{myNewColorD}{energy constraint}\\
     \hspace{-20em}
-    \textcolor{myNewColorD}{Energy constraint:}\\
-    \hspace{-20em}
-    \textcolor{myNewColorD}{$\quad\omega  = E_{\mathrm{max}} - E_{\mathrm{min}}$}\\
+    \textcolor{myNewColorD}{$\quad\omega  \equiv E_{\mathrm{max}} - E_{\mathrm{min}}$} $> 0$\\
     \vspace{0.7cm}
     \pause
     \hspace{-18em}
@@ -310,12 +295,12 @@ Vector spaces are equipped with an inner product. \\
             - i \frac{2r}{\omega} e^{i \theta} \sin(\frac{\omega t}{2\hbar}) \\
             \end{pmatrix}.
     \end{equation*}\\
-    \pause
+    \vspace{0.7cm}
     \end{scriptsize}
     \end{column}
 
     \begin{column}{0.5\textwidth}
-    \textcolor{myNewColorC}{CPT-symmetric} case
+    \textcolor{myNewColorC}{PT-symmetric} case
     \begin{scriptsize}
     \begin{equation*}
     \Tilde{H}  = \begin{pmatrix}
@@ -405,7 +390,7 @@ Vector spaces are equipped with an inner product. \\
     \pause
     \begin{column}{0.5\textwidth}
     \vspace{2cm}
-    \textcolor{myNewColorC}{CPT} time evolution\\
+    \textcolor{myNewColorC}{PT} time evolution\\
     \vspace{-1cm}
     \begin{scriptsize}
     \begin{equation*}
@@ -444,7 +429,7 @@ Vector spaces are equipped with an inner product. \\
 \begin{columns}
     \hspace{1.5em}
     \begin{column}{\textwidth}
-    $\mathcal{CPT}$ inner products are defined depending on the Hamiltonian used.\\
+    $\mathcal{PT}$ inner products are defined depending on the Hamiltonian used.\\
     \pause
     \vspace{0.5cm}
     \begin{equation*}
@@ -463,7 +448,7 @@ Vector spaces are equipped with an inner product. \\
         \pause
         vector separation: $\delta = 2 \arccos{|\left< \psi_{f}| \psi_{i}\right>|} = \pi$\\
         \pause 
-        \item not orthogonal $\to$ \textcolor{myNewColorC}{CPT}  inner  product\\
+        \item not orthogonal $\to$ \textcolor{myNewColorC}{PT}  inner  product\\
         \pause
         vector separation: $\delta = \pi - 2|\alpha|$\\
         \pause 
@@ -481,7 +466,7 @@ Vector spaces are equipped with an inner product. \\
 \section{Conclusion}
 \begin{frame}{Conclusion}
 \begin{enumerate}
-    \item This paper demonstrates the theoretical differences in both $\mathcal{CPT}$-symmetric and conventional Hermitian quantum mechanics.\\
+    \item This paper demonstrates the theoretical differences in both $\mathcal{PT}$-symmetric and conventional Hermitian quantum mechanics.\\
     \item The ``wormhole" effect could be of importance in design and implementation of fast quantum computation and comunication algorithms.\\
     \item There could be quantum protection mechanisms limiting the applicability of Hilbert-space ``wormholes".
 \end{enumerate}
@@ -493,55 +478,60 @@ Vector spaces are equipped with an inner product. \\
     \bibliography{mybib.bib}
 \end{frame}
 
+\pause
+
 % \section{Appendix}
-% \begin{frame}{Broken and unbroken CPT-symmetry}
-% \end{frame}
+\begin{frame}{This paper's abstract}
+\begin{figure}
+    \hspace{-4.8em}
+    \includegraphics[width=1.13\textwidth]{paper.png}
+    \\
+    \tiny{}
+    \end{figure}
+\end{frame}
 
-% \begin{frame}{Constructing the C operator}
-% \begin{equation*}
-% \mathcal{C}^2 = 1,\quad [\mathcal{C}, \hat{H}] = 0,\quad [\mathcal{C},\mathcal{PT}] = 0.
-% \end{equation*}
+\begin{frame}{Broken PT-symmetry phenomena}
+\begin{figure}
+    \hspace{-4.5em}
+    \includegraphics[width=\textwidth]{lightstops.png}
+    \\
+    \tiny{}
+    \end{figure}
+\end{frame}
 
-% \end{frame}
+\begin{frame}{Broken PT-symmetry phenomena}
+\begin{figure}
+    \hspace{-4.5em}
+    \includegraphics[width=0.5\textwidth]{amplitudes.pdf}
+    \\
+    \tiny{Fig 5. The probability density of the wave functions corresponding to the first and second excited states of the harmonic oscillator. States' probability densities are symmetric about zero. As the exceptional point parametric value is approached from the left, the probability densities begin to overlap in space. We can see the densities of the wave functions behave as mirror images of each other after we pass the exceptional point in the negative direction.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Constructing the PT inner product}
+The PT inner product is \textbf{not positive definite}.\\
+To patch up this problem, we use the $\mathcal{C}$ operator:\\
+\begin{equation*}
+\mathcal{C} \rightarrow \mathrm{charge\: conjugation}
+    \end{equation*}\\
+\begin{equation*}
+\mathcal{C}^2 = 1,\quad [\mathcal{C}, \hat{H}] = 0,\quad [\mathcal{C},\mathcal{PT}] = 0.
+    \end{equation*}\\
+\vspace{0.5cm}
+We construct $\mathcal{C}$ from the $\hat{H}$ eigenstates $\psi_n$.\\
+\begin{equation*}
+\mathcal{C} = \sum_{n} \psi_{n}(x) \psi_{n}(y)
+    \end{equation*}\\
+Inner product: 
+\begin{equation*}(\mathcal{CPT} \psi_{n}(x)) \cdot \psi_{m}(y) = \mathcal{C} \psi^{*}_{n}(-x)) \cdot \psi_{m}(y)
+\end{equation*}
+\end{frame}
 
 % \begin{frame}{Equivalent Hermitian and PT symmetic Hamiltonians}
 % For any Hamiltonian with unbroken $\mathcal{PT}$-symmetry there exists an equivalent Hermitian Hamiltonian.
 % \begin{enumerate}
 %     \item
 % \end{enumerate}
-% \end{frame}
-
-% \begin{frame}{More CPT quantum theory}
-% \begin{columns}
-%     \hspace{1.5em}
-%     \begin{column}{\textwidth}
-%     \begin{enumerate}
-%     \item \begin{large}Balanced open systems\\
-%     \end{large}
-%         \vspace{0.1cm}
-%         \begin{small}
-%         Imaginary potential contributions $\rightarrow$ source and drain terms.
-%         \end{small}
-
-%     \item \begin{large}Possible experimental ideas\\
-%     \end{large}
-%     \vspace{0.1cm}
-%     \begin{small}Embedding the non-Hermitian CPT symmetric system into a larger structure described by a Hermitian Hamiltonian.
-%     \end{small}
-%     \end{enumerate}
-%     \end{column}
-% \end{columns}
-% \end{frame}
-
-% \begin{frame}{Rabi frequency}
-% \begin{columns}
-%     \hspace{1.5em}
-%     \begin{column}{\textwidth}
-%     The frequency of fluctuations in the populations of two atomic energy levels.\\
-%     \vspace{0.5cm}
-%     It is proportional to the strength of the \textbf{coupling} between the light's and the atomic transition's frequencies. 
-%     \end{column}
-% \end{columns}
 % \end{frame}
 
 \end{document}
