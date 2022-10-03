@@ -34,8 +34,8 @@
 \setbeamerfont{author}{size=\small}
 \setbeamerfont{date}{size=\footnotesize}
 
-\title{Faster than Hermitian time-evolution}
-\subtitle{by Carl M Bender}
+\title{Faster than Hermitian Quantum Mechanics}
+\subtitle{by Carl M Bender et al}
 \author{Ana Fabela Hinojosa}
 \institute[]{\includegraphics[scale=0.18]{logo.jpg}}
 \date[\today]{Supervisors:\\ Jesper Levinsen\\ Meera Parish } 
@@ -63,6 +63,14 @@
 \end{frame}
 
 %------------------------------------------------------------
+% \begin{frame}{}
+% \begin{figure}
+%     \hspace{-4.8em}
+%     \includegraphics[width=1.1\textwidth]{paper.png}
+%     \\
+%     \tiny{}
+%     \end{figure}
+% \end{frame}
 
 \section{Introduction}
 \begin{frame}{Hilbert spaces}
@@ -78,7 +86,7 @@ Vector spaces are equipped with an inner product. \\
  \hspace{10em}
     \includegraphics[width=0.6\textwidth]{hilbert.pdf}
     \\
-    \tiny{Fig.3: Hilbert space stuff}
+    \tiny{Fig.1: Hilbert space stuff}
     \end{figure}
 \end{frame}
 
@@ -99,11 +107,10 @@ Vector spaces are equipped with an inner product. \\
     \end{tiny}
     \\
     \begin{enumerate}
-        \item \textcolor{myNewColorA}{Observables are \textbf{self-adjoint} operators $\{\hat{O}, \hat{H}, ...\}$}
-        \item \textcolor{myNewColorC}{Real energy spectrum with defined lowest energy}
-        \item \textcolor{myNewColorC}{A state $\psi$ of the quantum system is a unit vector of $\hat{H}$}
-        \item \textcolor{myNewColorC}{Expectation values of observables are given by the inner-product.}
-        \item \textcolor{myNewColorC}{Unitarity}
+        \item \textcolor{myNewColorA}{Observables are \textbf{self-adjoint} operators.}
+        \item \textcolor{myNewColorC}{A state $\psi$ of the quantum system is a unit vector of $\hat{H}$.}
+        \item \textcolor{myNewColorC}{$\hat{H}$ has a real energy spectrum with defined lowest energy.}
+        \item \textcolor{myNewColorC}{Unitarity.}
     \end{enumerate}
 \end{frame}
 
@@ -122,25 +129,25 @@ Vector spaces are equipped with an inner product. \\
     \end{tiny}
     \\
     \begin{enumerate}
-        \item \textcolor{myNewColorA}{\st{Observables are \textbf{self-adjoint} operators $\{\hat{O}, \hat{H}, ...\}$}}
-        \item \textcolor{myNewColorC}{Real energy spectrum with defined lowest energy}
-        \item \textcolor{myNewColorC}{A state $\psi$ of the quantum system is a unit vector of $\hat{H}$}
-        \item \textcolor{myNewColorC}{Expectation values of observables are given by the inner-product.}
-        \item \textcolor{myNewColorC}{Unitarity}
+        \item \textcolor{myNewColorA}{\st{Observables are \textbf{self-adjoint} operators.}}
+        \item \textcolor{myNewColorC}{A state $\psi$ of the quantum system is a unit vector of $\hat{H}$.}
+        \item \textcolor{myNewColorC}{$\hat{H}$ has a real energy spectrum with defined lowest energy.}
+        \item \textcolor{myNewColorC}{Unitarity.}
     \end{enumerate}
 \end{frame}
 
 
 \begin{frame}{CPT - symmetry in short}
     \vspace{-1cm}
-    Hilbert space $\rightarrow \hat{H} = \hat{H}^{\mathcal{CPT}}$ \\
-    \vspace{-0.4cm}
     \begin{align*}
         & \mathcal{C} \rightarrow \mathrm{charge\:conjugation},\\
         & \mathcal{P} \rightarrow \mathrm{spatial\:inversion},\\
         & \mathcal{T} \rightarrow \mathrm{complex\:conjugation\:and\:time\:reversal}.
     \end{align*}\\
+    \vspace{-0.4cm}
+    Hilbert space $\rightarrow \hat{H} = \hat{H}^{\mathcal{CPT}}$ \\
     \vspace{0.5cm}
+    \pause
     Inner product is determined dynamically in terms of the Hamiltonian.\\
     \pause
     \vspace{0.5cm}
@@ -261,7 +268,8 @@ Vector spaces are equipped with an inner product. \\
     \vec{\psi_{i}}  = \begin{pmatrix}
                         1 \\
                         0 \\                
-    \end{pmatrix}, \quad
+    \end{pmatrix}\pause, 
+    \quad
     \vec{\psi_{f}}  = \begin{pmatrix}
                         a \\
                         b \\                
@@ -269,10 +277,10 @@ Vector spaces are equipped with an inner product. \\
     = \begin{pmatrix}
                         0 \\
                         1 \\                
-    \end{pmatrix}
+    \end{pmatrix}.
     \vspace{0.5cm}
-    \end{equation*}. \\
-
+    \end{equation*} \\
+    \pause
     \begin{columns}
     \begin{column}{0.5\textwidth}
     \textcolor{myNewColorA}{Hermitian} case
@@ -284,12 +292,13 @@ Vector spaces are equipped with an inner product. \\
                 r e^{i \theta} & u  \\
                 \end{pmatrix} , \{r, s, \theta, u\} \in \mathbb{R},
     \end{equation*}\\
+    \pause
     \textcolor{myNewColorD}{Energy constraint}
     \hspace{-1.5em}
     \begin{equation*}
         \textcolor{myNewColorD}{\omega^2 = (s-u)^2 + 4r^2},
     \end{equation*}\\
-
+    \pause
     Time evolution
     \hspace{-1.5em}
     \begin{equation*}
@@ -301,6 +310,7 @@ Vector spaces are equipped with an inner product. \\
             - i \frac{2r}{\omega} e^{i \theta} \sin(\frac{\omega t}{2\hbar}) \\
             \end{pmatrix}.
     \end{equation*}\\
+    \pause
     \end{scriptsize}
     \end{column}
 
@@ -313,11 +323,13 @@ Vector spaces are equipped with an inner product. \\
                 s & r e^{-i\theta}  \\
                 \end{pmatrix}, \quad \{r, s, \theta\} \in \mathbb{R},
     \end{equation*}\\
+    \pause
     \textcolor{myNewColorD}{Energy constraint}
     \hspace{-1.5em}
    \begin{equation*}
         \textcolor{myNewColorD}{\omega^2 = 4s^2 - 4r^2 \sin^2{\theta}} > 0,
     \end{equation*}\\
+    \pause
     Time evolution
     \hspace{-1.5em}
     \begin{equation*}
@@ -418,10 +430,10 @@ Vector spaces are equipped with an inner product. \\
     Since $\omega$ is fixed,
     \textcolor{myNewColorD}{$\omega^2 = 4s^2 - 4r^2 \sin^{2}(\theta)$}\\
     $\quad\quad\quad\quad\:\:\:\quad \to \omega^2 = 4s^2\cos^2(\alpha)$\\
-    we require $s, r >> 1$.\\
     \pause
     \vspace{0.5cm}
     Then $t \to 0$ when $\alpha \to -\frac{\pi}{2}$.\\
+    but we also require $s, r >> 1$.\\
     \end{scriptsize}
     \end{column}
 \end{columns}
@@ -446,8 +458,11 @@ Vector spaces are equipped with an inner product. \\
         \end{pmatrix}
         \end{equation*}
     \begin{enumerate}
-        \item orthogonal $\to$ \textcolor{myNewColorA}{Hermitian} inner product
+        \item orthogonal $\to$ \textcolor{myNewColorA}{Hermitian} inner product\\
         \pause
+        \pause
+        vector separation: $\delta = 2 \arccos{|\left< \psi_{f}| \psi_{i}\right>|} = \pi$\\
+        \pause 
         \item not orthogonal $\to$ \textcolor{myNewColorC}{CPT}  inner  product\\
         \pause
         vector separation: $\delta = \pi - 2|\alpha|$\\
@@ -459,10 +474,14 @@ Vector spaces are equipped with an inner product. \\
 \end{columns}
 \end{frame}
 
+% \section{gedanken experiment}
+% \begin{frame}{Thought experiment}
+% \end{frame}
+
 \section{Conclusion}
 \begin{frame}{Conclusion}
 \begin{enumerate}
-    \item This paper demonstrates the theoretical differences in both $\mathcal{PT}$-symmetric and conventional Hermitian quantum mechanics.\\
+    \item This paper demonstrates the theoretical differences in both $\mathcal{CPT}$-symmetric and conventional Hermitian quantum mechanics.\\
     \item The ``wormhole" effect could be of importance in design and implementation of fast quantum computation and comunication algorithms.\\
     \item There could be quantum protection mechanisms limiting the applicability of Hilbert-space ``wormholes".
 \end{enumerate}
