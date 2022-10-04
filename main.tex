@@ -100,50 +100,30 @@ Vector spaces are equipped with an inner product. \\
     \\
     \begin{enumerate}
         \item \textcolor{myNewColorA}{Observables are \textbf{self-adjoint} operators.}
-        \item \textcolor{myNewColorC}{$\hat{H}$ has a real energy spectrum with defined lowest energy.}
+        \item \textcolor{myNewColorC}{$\hat{H}$ has a real energy spectrum bounded below.}
         \item \textcolor{myNewColorC}{Unitarity.}
     \end{enumerate}
 \end{frame}
-
-
-\begin{frame}{Hamiltonians as Observables}
-    \centering{
-    \begin{tikzpicture}
-    \draw (-2,-1) rectangle(5,4) ++(-2,-0.5) node{\textcolor{myNewColorB}{Hamiltonians}};
-    \draw (1,1) circle[x radius=0.8, y radius=0.8] ++(-0.05,-0.05) node{\textcolor{myNewColorA}{Hermitian}};
-    \draw (-1,0.5) rectangle(3,3) ++(-2,-0.5) node{\textcolor{myNewColorC}{PT-symmetric}};
-    \end{tikzpicture}}
-    \\
-    \hspace{1em}
-    \begin{tiny}
-        Fig.2: The set of all possible Hamiltonians.
-    \end{tiny}
-    \\
-    \begin{enumerate}
-        \item \textcolor{myNewColorA}{\st{Observables are \textbf{self-adjoint} operators.}}
-        \item \textcolor{myNewColorC}{$\hat{H}$ has a real energy spectrum with defined lowest energy.}
-        \item \textcolor{myNewColorC}{Unitarity.}
-    \end{enumerate}
-\end{frame}
-
 
 \begin{frame}{PT - symmetry in short}
     \vspace{-1cm}
     \begin{align*}
         & \mathcal{P} \rightarrow \mathrm{spatial\:inversion},\\
-        & \mathcal{T} \rightarrow \mathrm{time\:reversal (complex conjugation)}.
+        & \mathcal{T} \rightarrow \mathrm{time\:reversal\:(complex\: conjugation)}.
     \end{align*}\\
     \vspace{0.5cm}
-    Hilbert space $\rightarrow \hat{H} = \hat{H}^{\mathcal{PT}}$ \\
+    \begin{equation*}
+    \hat{H} = \mathcal{PT}\:\hat{H}\:\mathcal{PT} = \hat{H}^{\mathcal{PT}} 
+    \end{equation*}\\
     \vspace{0.5cm}
     \pause
-    The $\mathcal{PT}$ inner product is determined dynamically in terms of the Hamiltonian.\\
+    \begin{itemize}
+    \item The $\mathcal{PT}$ inner product is determined dynamically in terms of the Hamiltonian.\\
     \pause
-    \vspace{0.5cm}
-    If the eigenfunctions of a $\mathcal{PT}$-symmetric Hamiltonian are \textbf{not} also eigenfunctions of the $\mathcal{PT}$ operator we say the Hamiltonian possesess \textbf{broken $\mathcal{PT}$-symmetry}.\\
+    \item $\mathcal{PT}$-symmetry can be \textbf{broken} or \textbf{unbroken}.
     \pause
-    \vspace{0.5cm}
-    Interesting physical phenomena occurs in the broken symmetry region.
+    \item Interesting physical phenomena occurs in the broken symmetry region.
+    \end{itemize}
 \end{frame}
 
 
@@ -164,22 +144,26 @@ Vector spaces are equipped with an inner product. \\
     \end{column}
     
     \begin{column}{0.8\textwidth}
-    \vspace{-1.3cm}
+    \vspace{-1.1cm}
     \Scale[3]{\vec{\psi_{f}} = \hat{U} \vec{\psi_{i}}}\\
     \pause
     \hspace{6.8em}
     \begin{huge}
     {$\downarrow$}\\
     \end{huge}
-    \begin{enumerate}
+    \begin{itemize}
     \item \textcolor{myNewColorA}{Hermitian} quantum mechanics:\\
     \hspace{5em}
-    $\hat{U} = e^{-i\hat{H}t / \hbar}$,\\
+    $\hat{U} = e^{-i\hat{H}t / \hbar}$\\
     \hspace{5em}
-    \vspace{0.3cm}
     \pause
-    \item \textcolor{myNewColorC}{PT} quantum mechanics: \textcolor{myNewColorC}{\large{?}}
-    \end{enumerate}
+    \item \textcolor{myNewColorC}{PT} quantum mechanics:\\ 
+    \hspace{5em}
+    $\hat{U} = e^{-i\tilde{H}t / \hbar}$\\
+    \hspace{5em}
+    \pause
+    \textcolor{myNewColorC}{\large{Unitary?}}
+    \end{itemize}
     \end{column}
     \end{columns}
 \end{frame}
@@ -222,19 +206,23 @@ Vector spaces are equipped with an inner product. \\
     \tiny{Fig.4: Bloch sphere with initial and final states}
     \end{column}
     \begin{column}{0.8\textwidth}
-    \hspace{-20em}
+    \hspace{-18em}
     This space is spanned by $\vec{\psi_i}$ and $\vec{\psi_f}.$\\
     \vspace{0.4cm}
-    \hspace{-20em}
+    \hspace{-18em}
     \pause
-    We want the \textbf{fastest} time evolution possible,\\
-    \hspace{-20em}
-    without violating the time-energy uncertainty principle.\\
+    What is the \textbf{fastest} time evolution possible,\\
+    \hspace{-18em}
+    that does not violate the\\
+    \hspace{-18em}
+     time-energy uncertainty principle.\\
     \vspace{0.4cm}
     \pause
-    \hspace{-20em}
-    The Hamiltonian must satisfy the \textcolor{myNewColorD}{energy constraint}\\
-    \hspace{-20em}
+    \hspace{-18em}
+    The Hamiltonian must satisfy an\\ 
+    \hspace{-18em}
+    \textcolor{myNewColorD}{energy constraint} based on:\\
+    \hspace{-15em}
     \textcolor{myNewColorD}{$\quad\omega  \equiv E_{\mathrm{max}} - E_{\mathrm{min}}$} $> 0$\\
     \vspace{0.7cm}
     \pause
@@ -458,10 +446,6 @@ Vector spaces are equipped with an inner product. \\
 \end{columns}
 \end{frame}
 
-% \section{gedanken experiment}
-% \begin{frame}{Thought experiment}
-% \end{frame}
-
 \section{Conclusion}
 \begin{frame}{Conclusion}
 \begin{enumerate}
@@ -508,7 +492,7 @@ Vector spaces are equipped with an inner product. \\
 \end{frame}
 
 \begin{frame}{Constructing the PT inner product}
-The PT inner product is \textbf{not positive definite}.\\
+The $\mathcal{PT}$ inner product is \textbf{not positive definite}.\\
 To patch up this problem, we use the $\mathcal{C}$ operator:\\
 \begin{equation*}
 \mathcal{C} \rightarrow \mathrm{charge\: conjugation}
